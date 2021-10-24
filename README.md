@@ -1,4 +1,4 @@
-# Programmingexercise
+# main.Programmingexercise
 ##To run text document with intellij
 
 ![img.png](img.png)

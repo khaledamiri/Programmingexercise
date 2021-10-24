@@ -1,9 +1,18 @@
+package documents;
+
+import errors.ExceedLineNumberException;
+import utils.Constants;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class TEXTDocumentType extends DocumentType {
+public class TEXTDocumentTypeImpl implements TXTDocumentType, DocumentType {
 
-    public TEXTDocumentType() {
+    public TEXTDocumentTypeImpl() {
+    }
+
+    public boolean isRegularFile(String fileName) {
+        return Files.isRegularFile(Paths.get(fileName));
     }
 
     public void documentTextPhrasesExceed100Character(String item) {
@@ -16,7 +25,5 @@ public class TEXTDocumentType extends DocumentType {
         return lineOfInput.replaceAll(search, replace);
     }
 
-    public boolean goodFile(String fileName) {
-        return Files.isRegularFile(Paths.get(fileName));
-    }
+
 }

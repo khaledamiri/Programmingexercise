@@ -1,4 +1,6 @@
-public class FileFormatException extends RuntimeException {
+package errors;
+
+public class BadRequestException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
@@ -9,7 +11,7 @@ public class FileFormatException extends RuntimeException {
 
     private final String message;
 
-    public FileFormatException(String message) {
+    public BadRequestException(String message) {
         super(message);
         this.message = message;
     }

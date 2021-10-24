@@ -1,17 +1,16 @@
+import documents.TEXTDocumentTypeImpl;
+import errors.ExceedLineNumberException;
 import org.junit.Test;
-import org.mockito.Mockito;
+import utils.Constants;
 
-import java.io.File;
-import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
 
 public class TEXTDocumentTest {
 
-    TEXTDocumentType textDocumentType = new TEXTDocumentType();
+    TEXTDocumentTypeImpl textDocumentType = new TEXTDocumentTypeImpl();
     String itemGreatThan100Char = "azazazeazazeazeeazezerzerzerzeazeaezazeaezaezaezazeazeaeaezaeaezazeaezaezaeaezazeaeazeazeazeaezaeaezaeaeaez";
     String itemLessThan100Char = "zaeazezae";
 
@@ -31,7 +30,7 @@ public class TEXTDocumentTest {
     }
 
     @Test
-    public void testGoodFile(){
+    public void testGoodFile() {
         boolean isRegularFile = Files.isRegularFile(Paths.get("test-input.txt"));
         assertTrue(isRegularFile);
     }

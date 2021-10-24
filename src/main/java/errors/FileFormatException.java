@@ -1,4 +1,7 @@
-public class ExceedLineNumberException extends RuntimeException {
+package errors;
+
+public class FileFormatException extends RuntimeException {
+
     private static final long serialVersionUID = 1L;
 
     @Override
@@ -8,8 +11,9 @@ public class ExceedLineNumberException extends RuntimeException {
 
     private final String message;
 
-    public ExceedLineNumberException(String message) {
+    public FileFormatException(String message) {
         super(message);
         this.message = message;
     }
+
 }
